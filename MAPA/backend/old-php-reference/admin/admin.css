@@ -1,0 +1,46 @@
+/* admin/admin.css – styles for the admin pages only (login.php, index.php). */
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#f1f4f1;color:#1d2a20;line-height:1.5}
+.top{display:flex;align-items:center;gap:1rem;background:#06380f;color:#fff;padding:.8rem 1.2rem;position:sticky;top:0;z-index:5}
+.top a{color:#fff;text-decoration:none;font-size:.9rem}.top .grow{flex:1}
+.top form{margin:0}
+.layout{display:grid;grid-template-columns:220px 1fr;gap:1.5rem;max-width:1100px;margin:1.5rem auto;padding:0 1rem}
+.side{display:flex;flex-direction:column;gap:.25rem;position:sticky;top:4.5rem;align-self:start}
+.side a{padding:.6rem .9rem;border-radius:8px;color:#1d2a20;text-decoration:none;font-weight:500}
+.side a:hover{background:#e1e8e2}.side a.on{background:#0B5D1E;color:#fff}
+.panel{background:#fff;border-radius:12px;box-shadow:0 1px 6px rgba(0,0,0,.08);padding:1.4rem;display:grid;gap:1rem;margin-bottom:1.2rem}
+.panel[hidden]{display:none}
+h2{margin:0;color:#0B5D1E;font-size:1.3rem}
+label{display:grid;gap:.3rem;font-size:.85rem;font-weight:600}
+input,textarea{font:inherit;font-weight:400;padding:.6rem .75rem;border:1px solid #c5cbc6;border-radius:8px;width:100%;background:#fff}
+input[type=file]{padding:.4rem}
+input:focus,textarea:focus{outline:2px solid #0B5D1E;outline-offset:1px}
+textarea{resize:vertical}
+button{font:inherit;font-weight:600;border:1px solid #c5cbc6;background:#fff;border-radius:8px;padding:.55rem 1rem;cursor:pointer}
+button:hover{background:#eef3ee}
+button.primary{background:#0B5D1E;border-color:#0B5D1E;color:#fff;justify-self:start}
+button.primary:hover{background:#06380f}
+button.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}button.ghost:hover{background:rgba(255,255,255,.12)}
+button.danger{color:#b3261e}
+.hint{margin:0;color:#5b665e;font-size:.85rem}
+.rows{display:grid;gap:1rem}
+.row{border:1px solid #dfe5e0;border-radius:10px;padding:1rem;display:grid;gap:.8rem;background:#fafcfa}
+.row-head{display:flex;justify-content:space-between;align-items:center}
+.tools{display:flex;gap:.4rem}.tools button{padding:.25rem .6rem;font-size:.85rem}
+.img-field{display:flex;gap:1rem;align-items:end}.img-field label{flex:1}
+.thumb{width:110px;height:62px;object-fit:cover;border-radius:6px;border:1px solid #dfe5e0}
+.actions{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.flash{padding:.8rem 1rem;border-radius:10px;margin-bottom:1rem;font-weight:500}
+.flash.ok{background:#dff3e2;color:#14532d}.flash.err{background:#fde4e2;color:#8c1d18}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.side{position:static;flex-direction:row;flex-wrap:wrap}}
+
+/* ---- login page (admin/login.php) ---- */
+.login-page{display:grid;place-items:center;min-height:100vh}
+.login-box{background:#fff;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.15);padding:1.8rem;width:min(380px,92vw);display:grid;gap:1rem}
+.login-box h1{margin:0;color:#0B5D1E;font-size:1.5rem}
+.login-box .back{font-size:.85rem;color:#5b665e;text-align:center}
+.flash{margin:0}
+
+/* ---- dropdown + code ---- */
+select{font:inherit;font-weight:400;padding:.6rem .75rem;border:1px solid #c5cbc6;border-radius:8px;width:100%;background:#fff}
+code{background:#e8eee9;padding:.1rem .35rem;border-radius:4px}
