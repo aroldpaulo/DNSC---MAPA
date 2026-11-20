@@ -1,0 +1,89 @@
+/* =====================================================================
+   MAP PAGE DESIGN (map.html)  –  uses the colors from main.css
+   ===================================================================== */
+
+.map-page{padding-bottom:1rem}
+.map-page .sec-head{margin-top:1.5rem;margin-bottom:1.6rem}
+.map-page .sec-title{margin-bottom:0}
+
+/* layout: panel on the left, map on the right */
+.map-layout{display:grid;grid-template-columns:360px 1fr;gap:1.6rem;align-items:start}
+
+/* ===== LEFT PANEL ===== */
+.map-panel{background:#fff;border:1px solid #e8ede9;border-radius:16px;box-shadow:0 2px 14px rgba(6,56,15,.08);
+  padding:1.4rem;display:flex;flex-direction:column;gap:.45rem;max-height:calc(100vh - 140px);overflow-y:auto}
+.field-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--field);margin-top:.5rem}
+.field{width:100%;height:44px;padding:0 .9rem;border:1px solid #d5ddd7;border-radius:10px;background:#fff;font:inherit;font-size:.95rem;color:#1d2a20;outline:none;transition:.2s}
+.field:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(11,93,30,.15)}
+.field-row{display:flex;gap:.5rem}
+.icon-btn{flex-shrink:0;width:44px;height:44px;border:1px solid #d5ddd7;border-radius:10px;background:#fff;color:var(--green);font-size:1.05rem;cursor:pointer;transition:.2s}
+.icon-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+
+.map-search{display:flex;align-items:center;gap:.4rem;height:46px;padding:0 .3rem 0 .9rem;border:1px solid #d5ddd7;border-radius:999px;background:#fff;transition:.2s}
+.map-search:focus-within{border-color:var(--green);box-shadow:0 0 0 3px rgba(11,93,30,.15)}
+.map-search>i{color:var(--slate)}
+.map-search input{flex:1;min-width:0;height:100%;border:0;background:transparent;font:inherit;font-size:.95rem;outline:none}
+.map-search button{height:34px;padding:0 1.1rem;border:0;border-radius:999px;background:var(--green);color:#fff;font:inherit;font-weight:600;cursor:pointer;transition:.2s}
+.map-search button:hover{background:var(--field)}
+
+.panel-divider{height:1px;background:#e8ede9;margin:1rem 0 .6rem}
+.panel-title{font-size:1rem;color:var(--green);display:flex;align-items:center;gap:.5rem}
+
+.mode-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin:.8rem 0}
+.mode{height:38px;border:1px solid #d5ddd7;border-radius:10px;background:#fff;font:inherit;font-size:.85rem;font-weight:600;color:#44524a;cursor:pointer;transition:.2s}
+.mode:hover{border-color:var(--green);color:var(--green)}
+.mode.active{background:var(--green);border-color:var(--green);color:#fff}
+.btn-dark.wide{width:100%;border:0;font:inherit;font-weight:600;text-align:center}
+
+/* search results + route summary (placeholders) */
+.result-list{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-top:.5rem}
+.result-list li{padding:.7rem .9rem;border:1px solid #e8ede9;border-radius:10px;font-size:.92rem;cursor:pointer;transition:.2s}
+.result-list li:hover{background:var(--off);border-color:var(--green)}
+.result-list li small{display:block;color:var(--slate);font-size:.78rem}
+.result-list .result-empty{border-style:dashed;color:var(--slate);cursor:default}
+.result-list .result-empty:hover{background:none;border-color:#e8ede9}
+
+.route-card{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.8rem;padding:.9rem 1rem;border-radius:12px;background:var(--off)}
+.route-card small{display:block;color:var(--slate);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em}
+.route-card strong{color:var(--green);font-size:1.2rem}
+
+/* ===== MAP AREA ===== */
+.map-stage{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 12px 36px rgba(6,56,15,.16);border:1px solid #e8ede9;background:#fff}
+.map-canvas{width:100%;height:calc(100vh - 220px);min-height:520px}
+
+/* the placeholder shown until your real map replaces it */
+.map-placeholder{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;text-align:center;padding:2rem;color:#5d6b62;
+  background:
+    linear-gradient(rgba(11,93,30,.06) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg,rgba(11,93,30,.06) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(135deg,#eaf3ec,#f6f8f6)}
+.map-placeholder i{font-size:3.4rem;color:var(--green);opacity:.85}
+.map-placeholder h3{color:var(--green);font-size:1.3rem}
+.map-placeholder p{max-width:380px;font-size:.92rem}
+.map-placeholder code{background:rgba(11,93,30,.1);color:var(--green);padding:.1rem .4rem;border-radius:6px;font-size:.85em}
+
+/* floating controls on top of the map */
+.map-toolbar{position:absolute;top:14px;left:14px;right:14px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:.6rem;pointer-events:none}
+.map-toolbar>*{pointer-events:auto}
+.status-chip{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:999px;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.15);font-size:.8rem;font-weight:600;color:#44524a}
+.status-chip i{font-size:.55rem;color:var(--maroon)}
+.status-chip.ready i{color:var(--field)}
+.map-type{display:flex;background:#fff;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.15);overflow:hidden}
+.map-type button{padding:.45rem 1rem;border:0;background:transparent;font:inherit;font-size:.82rem;font-weight:600;color:#44524a;cursor:pointer;transition:.2s}
+.map-type button.active{background:var(--green);color:#fff}
+
+.map-zoom{position:absolute;right:14px;bottom:28px;z-index:5;display:flex;flex-direction:column;background:#fff;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.2);overflow:hidden}
+.map-zoom button{width:42px;height:42px;border:0;background:#fff;color:var(--green);font-size:1rem;cursor:pointer;transition:.2s}
+.map-zoom button+button{border-top:1px solid #e8ede9}
+.map-zoom button:hover{background:var(--green);color:#fff}
+
+.map-note{position:absolute;left:14px;bottom:14px;z-index:5;max-width:70%;padding:.5rem .9rem;border-radius:10px;background:rgba(6,56,15,.92);color:#fff;font-size:.82rem;opacity:0;transform:translateY(8px);transition:.3s;pointer-events:none}
+.map-note.show{opacity:1;transform:none}
+
+/* ===== SMALL SCREENS ===== */
+@media (max-width:900px){
+  .map-layout{grid-template-columns:1fr}
+  .map-panel{max-height:none}
+  .map-canvas{height:60vh;min-height:380px}
+  .map-stage{order:-1}
+}
